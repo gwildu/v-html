@@ -5,6 +5,7 @@
       <h1 class="title">
         v-html
       </h1>
+      <my-table :dummies="dummies"/>
       <h2 class="subtitle">
         Nuxt.js project
       </h2>
@@ -18,10 +19,17 @@
 
 <script>
 import Logo from '~/components/Logo.vue'
+import MyTable from '~/components/Table.vue'
 
 export default {
   components: {
-    Logo
+    Logo,
+    'my-table': MyTable
+  },
+  data () {
+    return {
+      dummies: ['**something**', 'something **else**']
+    }
   }
 }
 </script>
